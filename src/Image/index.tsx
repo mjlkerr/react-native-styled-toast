@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react'
 import { ColorProps, SpaceProps } from 'styled-system'
 import { Text } from 'react-native'
 
