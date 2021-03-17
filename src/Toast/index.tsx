@@ -3,7 +3,7 @@ import { Animated, TouchableOpacity, Vibration } from 'react-native'
 import { getStatusBarHeight } from 'react-native-status-bar-height'
 import Box, { BoxProps } from '../Box'
 import Icon from '../Icon'
-import Image from '../Image';
+import CustomImage from '../Image';
 import { Accent, Heading, IconCont, StyledToast, StyledToastProps, SubText, TextProps, ImageProps } from './styles'
 
 type IconFamilies =
