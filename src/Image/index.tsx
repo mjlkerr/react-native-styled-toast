@@ -1,6 +1,6 @@
-import React, { FC } from 'react';
-import { color, ColorProps, space, SpaceProps } from 'styled-system'
-import { Image, Text } from 'react-native'
+import React from 'react';
+import { ColorProps, SpaceProps } from 'styled-system'
+import { Text } from 'react-native'
 
 export type ImageProps = SpaceProps &
   ColorProps & {
