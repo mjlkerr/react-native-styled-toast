@@ -3,6 +3,7 @@ import { Animated, TouchableOpacity, Vibration } from 'react-native'
 import { getStatusBarHeight } from 'react-native-status-bar-height'
 import Box, { BoxProps } from '../Box'
 import Icon from '../Icon'
+import Image from '../Image';
 import { Accent, Heading, IconCont, StyledToast, StyledToastProps, SubText, TextProps, ImageProps } from './styles'
 
 type IconFamilies =
@@ -236,16 +237,14 @@ export const Toast: React.FC<ToastConfig & ToastInternalConfig> = ({
         </TouchableOpacity>
       )}
       {hasCustomImage && (
-        <TouchableOpacity onPress={() => onClose && id && onClose(id)}>
-          <Box {...Object.assign({}, DEFAULT_PROPS.closeButtonStyles, closeButtonStyles)}>
-            <Icon
-              size={closeIconSize || 20}
-              family={closeIconFamily || 'Feather'}
-              name={closeIconName || 'x'}
-              color={closeIconColor}
-            />
-          </Box>
-        </TouchableOpacity>
+        <IconCont px={4}>
+          <Image
+            size={iconSize || 20}
+            family={iconFamily || 'Feather'}
+            color={!!iconColor ? iconColor : isSuccess ? 'success' : isInfo ? 'info' : 'error'}
+            name={!!iconName ? iconName : isSuccess ? 'check-circle' : isInfo ? 'alert-circle' : 'x-circle'}
+          />
+        </IconCont>
       )}
     </StyledToast>
   )
