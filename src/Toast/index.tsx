@@ -238,7 +238,7 @@ export const Toast: React.FC<ToastConfig & ToastInternalConfig> = ({
       )}
       {hasCustomImage && (
         <IconCont px={4}>
-          <Image
+          <CustomImage
             size={iconSize || 20}
             family={iconFamily || 'Feather'}
             color={!!iconColor ? iconColor : isSuccess ? 'success' : isInfo ? 'info' : 'error'}
