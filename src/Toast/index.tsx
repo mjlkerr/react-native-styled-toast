@@ -3,9 +3,18 @@ import { Animated, TouchableOpacity, Vibration } from 'react-native'
 import { getStatusBarHeight } from 'react-native-status-bar-height'
 import Box, { BoxProps } from '../Box'
 import Icon from '../Icon'
-import CustomImage from '../Image';
-import { Accent, Heading, IconCont, StyledToast, StyledToastProps,
-  SubText, TextProps, ImageProps, ImageCont } from './styles'
+import CustomImage from '../Image'
+import {
+  Accent,
+  Heading,
+  IconCont,
+  StyledToast,
+  StyledToastProps,
+  SubText,
+  TextProps,
+  ImageProps,
+  ImageCont
+} from './styles'
 
 type IconFamilies =
   | 'Entypo'
@@ -48,7 +57,7 @@ export type ToastConfig = {
   hideCloseIcon?: boolean
   iconSize?: number
   customImage: ImageProps
-  hasCustomImage: boolean,
+  hasCustomImage: boolean
 }
 
 const statusBarHeight = getStatusBarHeight()
@@ -97,7 +106,7 @@ const DEFAULT_PROPS: ToastConfig = {
   },
   hideCloseIcon: false,
   hasCustomImage: false,
-  customImage: {},
+  customImage: {}
 }
 
 export const Toast: React.FC<ToastConfig & ToastInternalConfig> = ({
@@ -130,7 +139,7 @@ export const Toast: React.FC<ToastConfig & ToastInternalConfig> = ({
   hideCloseIcon,
   iconSize,
   customImage,
-  hasCustomImage,
+  hasCustomImage
 }) => {
   const isSuccess = intent === 'SUCCESS'
   const isInfo = intent === 'INFO'
@@ -216,12 +225,10 @@ export const Toast: React.FC<ToastConfig & ToastInternalConfig> = ({
 
       {hasCustomImage && (
         <ImageCont px={4}>
-          <CustomImage
-            size={20}
-          />
+          <CustomImage size={20} />
         </ImageCont>
       )}
-    
+
       <Box alignItems="flex-start" flex={1} pl={hideIcon ? 4 : 0} pr={!!subMessage ? 2 : 0} py={2}>
         <Box flexDirection="row" flexWrap="wrap" flex={1}>
           <Heading color={color} {...messageProps}>
