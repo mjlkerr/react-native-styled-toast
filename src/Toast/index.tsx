@@ -4,7 +4,8 @@ import { getStatusBarHeight } from 'react-native-status-bar-height'
 import Box, { BoxProps } from '../Box'
 import Icon from '../Icon'
 import CustomImage from '../Image';
-import { Accent, Heading, IconCont, StyledToast, StyledToastProps, SubText, TextProps, ImageProps } from './styles'
+import { Accent, Heading, IconCont, StyledToast, StyledToastProps,
+  SubText, TextProps, ImageProps, ImageCont } from './styles'
 
 type IconFamilies =
   | 'Entypo'
@@ -47,7 +48,8 @@ export type ToastConfig = {
   hideCloseIcon?: boolean
   iconSize?: number
   customImage: ImageProps
-  hasCustomImage: boolean
+  hasCustomImage: boolean,
+  imageSize?: number
 }
 
 const statusBarHeight = getStatusBarHeight()
@@ -130,6 +132,7 @@ export const Toast: React.FC<ToastConfig & ToastInternalConfig> = ({
   iconSize,
   customImage,
   hasCustomImage,
+  imageSize,
 }) => {
   const isSuccess = intent === 'SUCCESS'
   const isInfo = intent === 'INFO'
@@ -212,6 +215,15 @@ export const Toast: React.FC<ToastConfig & ToastInternalConfig> = ({
           />
         </IconCont>
       )}
+
+      {hasCustomImage && (
+        <ImageCont px={4}>
+          <CustomImage
+            size={imageSize || 20}
+          />
+        </ImageCont>
+      )}
+      
       <Box alignItems="flex-start" flex={1} pl={hideIcon ? 4 : 0} pr={!!subMessage ? 2 : 0} py={2}>
         <Box flexDirection="row" flexWrap="wrap" flex={1}>
           <Heading color={color} {...messageProps}>
@@ -235,16 +247,6 @@ export const Toast: React.FC<ToastConfig & ToastInternalConfig> = ({
             />
           </Box>
         </TouchableOpacity>
-      )}
-      {hasCustomImage && (
-        <IconCont px={4}>
-          <CustomImage
-            size={iconSize || 20}
-            family={iconFamily || 'Feather'}
-            color={!!iconColor ? iconColor : isSuccess ? 'success' : isInfo ? 'info' : 'error'}
-            name={!!iconName ? iconName : isSuccess ? 'check-circle' : isInfo ? 'alert-circle' : 'x-circle'}
-          />
-        </IconCont>
       )}
     </StyledToast>
   )
