@@ -18,10 +18,14 @@ const CustomImage: React.FC<ImageProps> = (props) => {
       <Image
         source={images.confetti}
         resizeMode='contain'
-        style={[{ height: 25, width: 25 }]}
+        style={[{ height: props.size, width: props.size }]}
       />
     </View>
   )
 }
 
 export default CustomImage
+
+CustomImage.defaultProps = {
+  size: 20,
+}
