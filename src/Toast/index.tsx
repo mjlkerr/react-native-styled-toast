@@ -49,7 +49,6 @@ export type ToastConfig = {
   iconSize?: number
   customImage: ImageProps
   hasCustomImage: boolean,
-  imageSize?: number
 }
 
 const statusBarHeight = getStatusBarHeight()
@@ -132,7 +131,6 @@ export const Toast: React.FC<ToastConfig & ToastInternalConfig> = ({
   iconSize,
   customImage,
   hasCustomImage,
-  imageSize,
 }) => {
   const isSuccess = intent === 'SUCCESS'
   const isInfo = intent === 'INFO'
@@ -219,7 +217,7 @@ export const Toast: React.FC<ToastConfig & ToastInternalConfig> = ({
       {hasCustomImage && (
         <ImageCont px={4}>
           <CustomImage
-            size={imageSize || 20}
+            size={20}
           />
         </ImageCont>
       )}
