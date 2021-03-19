@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { ColorProps, SpaceProps } from 'styled-system'
-import { Text } from 'react-native'
+import { Text, Image, View } from 'react-native'
+import { images } from'./assets/images';
 
 export type ImageProps = SpaceProps &
   ColorProps & {
@@ -12,7 +13,15 @@ export type ImageProps = SpaceProps &
   }
 
 const CustomImage: React.FC<ImageProps> = (props) => {
-  return <Text>hi</Text>
+  return (
+    <View>
+      <Image
+        source={images.confetti}
+        resizeMode='contain'
+        style={[{ height: 25, width: 25 }]}
+      />
+    </View>
+  )
 }
 
 export default CustomImage
