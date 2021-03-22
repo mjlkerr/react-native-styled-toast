@@ -6,5 +6,5 @@ export const ImageContainer = styled.View<SpaceProps>`
   height: 30px;
   width: 30px;
   border-radius: 15px;
-  background-color: 'white';
+  background-color: white;
 `
