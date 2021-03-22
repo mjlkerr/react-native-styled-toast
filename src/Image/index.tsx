@@ -15,7 +15,11 @@ const CustomImage: React.FC<ImageProps> = (props) => {
   if (props.customImage) {
     return (
       <ImageContainer>
-        <Image source={{ uri: props.customImage }} resizeMode="contain" />
+        <Image
+          source={{ uri: props.customImage }}
+          resizeMode="contain"
+          style={[{ height: 30, width: 30, borderRadius: 15 }]}
+        />
       </ImageContainer>
     )
   }
