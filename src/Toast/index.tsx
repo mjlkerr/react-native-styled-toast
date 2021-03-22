@@ -4,17 +4,7 @@ import { getStatusBarHeight } from 'react-native-status-bar-height'
 import Box, { BoxProps } from '../Box'
 import Icon from '../Icon'
 import CustomImage from '../Image'
-import {
-  Accent,
-  Heading,
-  IconCont,
-  StyledToast,
-  StyledToastProps,
-  SubText,
-  TextProps,
-  ImageProps,
-  ImageCont
-} from './styles'
+import { Accent, Heading, IconCont, StyledToast, StyledToastProps, SubText, TextProps, ImageCont } from './styles'
 
 type IconFamilies =
   | 'Entypo'
@@ -56,7 +46,7 @@ export type ToastConfig = {
   toastStyles?: StyledToastProps
   hideCloseIcon?: boolean
   iconSize?: number
-  customImage: ImageProps
+  customImage: string
   hasCustomImage: boolean
 }
 
@@ -106,7 +96,7 @@ const DEFAULT_PROPS: ToastConfig = {
   },
   hideCloseIcon: false,
   hasCustomImage: false,
-  customImage: {}
+  customImage: ''
 }
 
 export const Toast: React.FC<ToastConfig & ToastInternalConfig> = ({
@@ -225,7 +215,7 @@ export const Toast: React.FC<ToastConfig & ToastInternalConfig> = ({
 
       {hasCustomImage && (
         <ImageCont px={4}>
-          <CustomImage size={20} />
+          <CustomImage size={20} customImage={customImage} />
         </ImageCont>
       )}
 
