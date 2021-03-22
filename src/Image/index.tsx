@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { ColorProps, SpaceProps } from 'styled-system'
 import { Image, View } from 'react-native'
-import * as images from '../Image/assets/images.js'
+import images from '../Image/assets/images.js'
 
 export type ImageProps = SpaceProps &
   ColorProps & {
