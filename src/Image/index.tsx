@@ -2,6 +2,7 @@ import * as React from 'react'
 import { ColorProps, SpaceProps } from 'styled-system'
 import { Image, View } from 'react-native'
 import images from '../Image/assets/images.js'
+import { ImageContainer } from './styles'
 
 export type ImageProps = SpaceProps &
   ColorProps & {
@@ -13,13 +14,9 @@ export type ImageProps = SpaceProps &
 const CustomImage: React.FC<ImageProps> = (props) => {
   if (props.customImage) {
     return (
-      <View>
-        <Image
-          source={{ uri: props.customImage }}
-          resizeMode="contain"
-          style={[{ height: props.size, width: props.size }]}
-        />
-      </View>
+      <ImageContainer>
+        <Image source={{ uri: props.customImage }} resizeMode="contain" />
+      </ImageContainer>
     )
   }
   return (

@@ -84,8 +84,6 @@ export const Accent = styled.View<ColorProps>`
 
 export type TextProps = SpaceProps & ColorProps & TextAlignProps & FontSizeProps
 
-export type ImageProps = SpaceProps & ColorProps & TextAlignProps & FontSizeProps
-
 export const Heading = styled.Text<TextProps>`
   ${space};
   ${color};
