@@ -271,7 +271,7 @@ export const Toast: React.FC<ToastConfig & ToastInternalConfig> = ({
             <Icon
               size={arrowIconSize || 20}
               family={arrowIconFamily || 'MaterialCommunityIcons'}
-              name={arrowIconName || 'chevron_right'}
+              name={arrowIconName || 'chevron-right'}
               color={arrowIconColor}
             />
           </Box>
