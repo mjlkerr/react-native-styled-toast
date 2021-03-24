@@ -109,7 +109,6 @@ const DEFAULT_PROPS: ToastConfig = {
   arrowButtonStyles: {
     p: 2,
     mx: 2,
-    bg: 'muted',
     borderRadius: 4,
     alignItems: 'center'
   }
@@ -271,7 +270,7 @@ export const Toast: React.FC<ToastConfig & ToastInternalConfig> = ({
           <Box {...Object.assign({}, DEFAULT_PROPS.arrowButtonStyles, arrowButtonStyles)}>
             <Icon
               size={arrowIconSize || 20}
-              family={arrowIconFamily || 'MaterialIcons'}
+              family={arrowIconFamily || 'MaterialCommunityIcons'}
               name={arrowIconName || 'chevron_right'}
               color={arrowIconColor}
             />
